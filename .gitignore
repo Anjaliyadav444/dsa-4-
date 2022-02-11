@@ -1,52 +1,56 @@
-# Prerequisites
-*.d
+#include <stdio.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+//Compiler version gcc  6.3.0
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+int main()
+{
+  int a[5][5];
+  int b[5][5];
+  int c[5][5];
+  int i,j;
+  int m =0;
+  int n=9;
+  
+  for (int i=0; i<3; i++) // storing values in array a 
+  {
+    for (int j=0; j<3; j++){
+      a[i][j]=m;
+      m++;
+    }
+  } printf ("\nValues of array A :\n");
+   for (  int i=0; i<3; i++) // print array A 
+   {
+     for (int j=0; j<3; j++)
+     {
+       printf ("%d ",a[i][j]);
+     } printf ("\n");
+   } for (int i=0; i<3; i++) // storing values in array b 
+  {
+    for (int j=0; j<3; j++){
+      b[i][j]=n;
+      n--;
+    }
+  } printf ("\nValues of array B :\n");
+   for (int i=0; i<3; i++) // print array B
+   {
+     for (int j=0; j<3; j++)
+     {
+       printf ("%d ",b[i][j]);
+     } printf ("\n");
+   } 
+     for (int i=0; i<3; i++) // storing values in array c 
+     {
+       for (int j=0; j<3; j++)
+       {
+         c[i][j] = a[i][j]* b[i][j];
+       }
+     }  printf("\nValues of array C :\n");
+      for (int i=0; i<3; i++)
+      {
+        for (int j=0; j<3; j++)
+        {
+          printf("%d ",c[i][j]);
+        } printf("\n");
+      } 
+  return 0;
+}
